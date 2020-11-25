@@ -1,19 +1,13 @@
-process.env.PORT = process.env.PORT || 3000
+process.env.PORT = process.env.PORT || 3000;
 
-
-process.env.NODE_ENV = process.env.NODE_ENV || 'Dev'
-
-process.env.CADUCIDAD_TOKEN = '48h'
-
-process.env.SEED = process.env.SEED || 'secret-dev'
+process.env.NODE_ENV = process.env.NODE_ENV || "Dev";
 
 let urlDB;
 
-if(process.env.NODE_ENV === 'Dev'){
-    urlDB = 'mongodb://localhost:27017/caffe'
-}else{
-    urlDB = 'mongodb+srv://admin:lG0JSKKHa2923jaM@cluster0-xsw8o.mongodb.net/caffe'
+if (process.env.NODE_ENV === "Dev") {
+  urlDB = "mongodb://localhost:27017/student";
+} else {
+  urlDB = process.env.URLMONGO;
 }
 
-process.env.URLDB = urlDB
-
+process.env.URLDB = urlDB;
